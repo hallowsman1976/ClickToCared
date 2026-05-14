@@ -7,6 +7,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- เพิ่ม LIFF SDK -->
+<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="min-h-screen bg-gradient-to-br from-sky-50 via-white to-emerald-50 font-mitr">
@@ -17,6 +19,11 @@
       <p class="text-gray-700 font-medium">ระบบจองคิวออนไลน์</p>
       <p class="text-sm text-gray-600">คลินิกวัยรุ่น โรงพยาบาลนิคมคำสร้อย</p>
       <p class="mt-4 text-emerald-600 italic">"จองง่าย ปรึกษาไว ใส่ใจทุกความลับของวัยรุ่น"</p>
+      
+      <!-- แสดงชื่อผู้ใช้ LINE -->
+      <p id="welcomeUser" class="mt-3 text-sm text-gray-500" style="display:none">
+        สวัสดีคุณ <span id="userName" class="font-medium text-sky-600"></span> 👋
+      </p>
     </div>
 
     <div class="space-y-4 flex-1">
@@ -32,5 +39,29 @@
       © 2026 โรงพยาบาลนิคมคำสร้อย
     </div>
   </div>
+
+  <!-- Loading Overlay -->
+  <div id="loadingOverlay" class="fixed inset-0 bg-black/40 z-50 items-center justify-center" style="display:flex">
+    <div class="bg-white rounded-2xl p-6 flex items-center gap-3">
+      <div class="animate-spin h-6 w-6 border-4 border-sky-500 border-t-transparent rounded-full"></div>
+      <span>กำลังเตรียมระบบ...</span>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/liff.js"></script>
+  <script>
+    // เริ่มต้น LIFF ที่หน้าแรกเลย
+    (async function() {
+      const ok = await LiffHelper.init();
+      Utils.showLoading(false);
+      
+      if (ok && LiffHelper.user.displayName) {
+        document.getElementById('welcomeUser').style.display = 'block';
+        document.getElementById('userName').textContent = LiffHelper.user.displayName;
+      }
+    })();
+  </script>
 </body>
 </html>
