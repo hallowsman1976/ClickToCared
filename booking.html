@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>จองคิว - Click to Care</title>
+<link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script charset="utf-8" src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body class="min-h-screen bg-gradient-to-br from-sky-50 via-white to-emerald-50 font-mitr">
+  <div class="max-w-md mx-auto px-4 py-6">
+    <div class="flex items-center mb-6">
+      <a href="index.html" class="text-sky-600 mr-3">← กลับ</a>
+      <h1 class="text-xl font-semibold text-sky-700">จองคิวรับบริการ</h1>
+    </div>
+
+    <!-- Step 1: บริการ -->
+    <div class="bg-white rounded-2xl p-4 shadow mb-4">
+      <h2 class="font-medium text-gray-700 mb-3">1. เลือกบริการ</h2>
+      <div id="serviceList" class="space-y-2"></div>
+    </div>
+
+    <!-- Step 2: วันที่ -->
+    <div class="bg-white rounded-2xl p-4 shadow mb-4">
+      <h2 class="font-medium text-gray-700 mb-3">2. เลือกวันรับบริการ (เฉพาะวันอังคาร)</h2>
+      <div id="dateList" class="space-y-2 max-h-64 overflow-y-auto"></div>
+    </div>
+
+    <!-- Step 3: เวลา -->
+    <div class="bg-white rounded-2xl p-4 shadow mb-4" id="timeSection" style="display:none">
+      <h2 class="font-medium text-gray-700 mb-3">3. เลือกช่วงเวลา</h2>
+      <div id="timeList" class="grid grid-cols-2 gap-2"></div>
+    </div>
+
+    <!-- Step 4: ข้อมูลส่วนตัว -->
+    <div class="bg-white rounded-2xl p-4 shadow mb-4" id="formSection" style="display:none">
+      <h2 class="font-medium text-gray-700 mb-3">4. ข้อมูลส่วนตัว</h2>
+      <div class="space-y-3">
+        <input id="fullName" type="text" placeholder="ชื่อ-สกุล" class="w-full p-3 border rounded-xl">
+        <input id="age" type="number" placeholder="อายุ" min="10" max="59" class="w-full p-3 border rounded-xl">
+        <textarea id="address" placeholder="ที่อยู่" rows="2" class="w-full p-3 border rounded-xl"></textarea>
+        <input id="phone" type="tel" placeholder="เบอร์ติดต่อ (9-10 หลัก)" class="w-full p-3 border rounded-xl">
+        <label class="flex items-start gap-2 text-sm text-gray-600">
+          <input id="consent" type="checkbox" class="mt-1">
+          <span>ข้าพเจ้ายินยอมให้คลินิกวัยรุ่น โรงพยาบาลนิคมคำสร้อย ใช้ข้อมูลเพื่อการนัดหมายและติดต่อกลับเท่านั้น</span>
+        </label>
+      </div>
+    </div>
+
+    <button id="btnSubmit" class="w-full py-4 bg-gradient-to-r from-sky-500 to-emerald-500 text-white text-lg font-medium rounded-2xl shadow-lg">
+      ✅ ยืนยันการจอง
+    </button>
+  </div>
+
+  <div id="loadingOverlay" class="fixed inset-0 bg-black/40 z-50 hidden items-center justify-center" style="display:none">
+    <div class="bg-white rounded-2xl p-6 flex items-center gap-3">
+      <div class="animate-spin h-6 w-6 border-4 border-sky-500 border-t-transparent rounded-full"></div>
+      <span>กำลังโหลด...</span>
+    </div>
+  </div>
+
+  <script src="js/config.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/liff.js"></script>
+  <script src="js/booking.js"></script>
+</body>
+</html>
