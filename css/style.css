@@ -1,0 +1,4 @@
+.font-mitr { font-family: 'Mitr', sans-serif; }
+body { -webkit-tap-highlight-color: transparent; }
+button:active { transform: scale(0.98); }
+input:focus, textarea:focus, select:focus { outline: none; border-color: #0ea5e9; }
