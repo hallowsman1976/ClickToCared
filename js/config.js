@@ -2,7 +2,7 @@
 const CONFIG = {
   LIFF_ID: "YOUR_LIFF_ID",
   // URL ของ Google Apps Script Web App หลังจาก Deploy
-  GAS_URL: "https://script.google.com/macros/s/YOUR_DEPLOYMENT_ID/exec",
+  GAS_URL: "https://script.google.com/macros/s/AKfycbxyOxtOQw4sh5dsE1kZKK2wGWCimIuqyLAu_cur1gAMQzprrVjeWrNrhQOvpm1hhR36bQ/exec",
   // ประเภทบริการ
   SERVICES: [
     { id: 's1', name: 'รับบริการฝังยาคุมกำเนิด', icon: '💉' },
