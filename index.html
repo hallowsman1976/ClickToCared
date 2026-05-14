@@ -13,14 +13,25 @@
 </head>
 <body class="min-h-screen bg-gradient-to-br from-sky-50 via-white to-emerald-50 font-mitr">
   <div class="max-w-md mx-auto px-4 py-8 min-h-screen flex flex-col">
-    <div class="text-center mb-8 mt-8">
-      <div class="text-6xl mb-4"><img src="https://img2.pic.in.th/915f1a7ae1af8639db77288fa6b7ad19.png" alt="รับยานอกเวลา" border="0" width="50" height="50"></div>
+    <!-- 🎨 ส่วน Header พร้อม Logo -->
+    <div class="mb-6 flex justify-center">
+  <div class="relative w-32 h-32 flex items-center justify-center 
+              bg-white/60 backdrop-blur-sm rounded-3xl shadow-xl 
+              border border-white/50 p-3 hover:scale-105 transition-transform">
+    <img src="https://img2.pic.in.th/915f1a7ae1af8639db77288fa6b7ad19.png" alt="Click to Care Logo" 
+         class="w-full h-full object-contain">
+  </div>
+  </div>
+    
+    <div class="text-center mb-8 mt-4">
       <h1 class="text-3xl font-semibold text-sky-600 mb-2">Click to Care</h1>
       <p class="text-gray-700 font-medium">ระบบจองคิวออนไลน์</p>
       <p class="text-sm text-gray-600">คลินิกวัยรุ่น โรงพยาบาลนิคมคำสร้อย</p>
-      <p class="mt-4 text-emerald-600 italic">"จองง่าย ปรึกษาไว ใส่ใจทุกความลับของวัยรุ่น"</p>
-      
-      <!-- แสดงชื่อผู้ใช้ LINE -->
+      <p class="mt-4 text-emerald-600 italic">
+        "จองง่าย ปรึกษาไว ใส่ใจทุกความลับของวัยรุ่น"
+      </p>
+
+      <!-- ทักทายผู้ใช้ -->
       <p id="welcomeUser" class="mt-3 text-sm text-gray-500" style="display:none">
         สวัสดีคุณ <span id="userName" class="font-medium text-sky-600"></span> 👋
       </p>
@@ -36,7 +47,7 @@
     </div>
 
     <div class="text-center text-xs text-gray-400 mt-8 pb-4">
-      © 2026 โรงพยาบาลนิคมคำสร้อย
+      © 2026 โรงพยาบาลนิคมคำสร้อย Design by : Sniper
     </div>
   </div>
 
